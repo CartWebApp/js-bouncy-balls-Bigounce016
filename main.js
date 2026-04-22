@@ -58,7 +58,7 @@ function Ball(x, y, velX, velY, color, size) {
       const dy = this.y - balls[j].y;
       const distance = Math.sqrt (dx * dx + dy * dy);
 
-      if (distance , this.size + balls[j].size) {
+      if (distance < this.size + balls[j].size) {
         balls[j].color = this.color = 'rgb(' + random(0, 255) + ',' + random(0,255) + ',' + random(0,255) + ')';
 
       }
@@ -68,7 +68,7 @@ function Ball(x, y, velX, velY, color, size) {
 
  let balls = [];
 
- while (balls.length < 25) {
+ while (balls.length < 2500) {
   let size = random(10,20)
   let ball = new Ball(
     random(0 + size,width - size),
@@ -81,7 +81,7 @@ function Ball(x, y, velX, velY, color, size) {
   balls.push(ball)
  };
  function loop() {
-  ctx.fillstyle = 'rgba(0, 0, 0, 0.25)';
+  ctx.fillStyle = 'rgba(0, 0, 0, 0.25)';
   ctx.fillRect(0, 0, width, height);
 
   for (let i = 0; i < balls.length; i++) {
